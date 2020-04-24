@@ -5,7 +5,6 @@ let generateOrders = () => {
   for (let id = 0; id < 30; id++) {
     let firstName = faker.name.firstName()
     let lastName = faker.name.lastName()
-    let email = faker.internet.email()
     const statusList = ['Ordered', 'Pending', 'Canceled', 'Complete']
     let status = statusList[Math.floor(Math.random() * statusList.length)]
     const date = faker.date.between('2019-10-15', `${faker.date.recent()}`)
@@ -13,10 +12,13 @@ let generateOrders = () => {
       id: id,
       order_status: status,
       request_date: date,
-      company_name: email,
+      email: faker.internet.email(),
+      phone: faker.phone.phoneNumber(),
       contact_person: `${firstName} ${lastName}`,
       carbon_quantity: faker.random.number(),
-      carbon_price: faker.random.number()
+      carbon_price: faker.random.number(),
+      company_name: faker.company.companyName(),
+      source_of_carbon: faker.hacker.noun()
     })
   }
 
