@@ -43,7 +43,15 @@ let generateOrders = () => {
     sum_carbon_sold: sum_carbon_quantity,
     sum_carbon_income: sum_carbon_price
   }
-  return { orders: orders, summary: summary }
+  const seller = {
+    tax_id: '0108811009090',
+    company_name: 'PTT Public Company Limited',
+    address: `101/99, M Thai Tower, All Seasons Place, 15th Floor Lumphini Pathum Wan Bangkok 10330`,
+    phone: '026538110',
+    branch_code: '000308',
+    branch_name: 'Phloen Chit'
+  }
+  return { orders: orders, summary: summary, seller: seller }
 }
 
 module.exports = generateOrders
